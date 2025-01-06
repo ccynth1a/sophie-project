@@ -1,5 +1,7 @@
 # Soapie Project
 
+![image](https://github.com/user-attachments/assets/e4b79237-602b-46e6-b1c3-165624ee78f6)
+
 This is a quick project to fulfill a horrible set of requirements we got given over the Christmas break (WHO SETS A 30+ HOUR PROJECT OVER THE CHRISTMAS HOLIDAYS?!?!?!?!??!!?!?!?!? AND DOESNT PROVIDE AN EXAMPLE?!?!?!?!?). Here's some instructions for how to clone and edit it to "provide a base to work off of" ;)
 
 ## Made by Phlobism and CCynth1a

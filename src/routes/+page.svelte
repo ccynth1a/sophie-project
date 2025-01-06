@@ -30,7 +30,7 @@
     <div class=" text-white ">
         <div class=" text-4xl font-semibold " > Dashboard </div>
         <div class=" text-2xl mt-2 mb-4 font-light ">
-            Showing metrics between {start} and {end}
+            Showing metrics between {start} and {end}.
         </div>
     </div>
     <!-- Totals -->
@@ -67,5 +67,8 @@
         height: 100%;
         width: 100%;
         padding: 1rem;
+    }
+    .card:hover{
+        background: #1f2937;
     }
 </style>
