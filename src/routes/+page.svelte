@@ -13,7 +13,7 @@
 <!-- the container of the main page :3 -->
 <div class=" m-4 ">
     <div class=" p-4 bg-gray-800 text-white rounded-xl">
-        <div class=" relative top-3 grid grid-cols-3 justify-center text-center items-center " >
+        <div class=" grid grid-cols-3 justify-center text-center items-center " >
             <Clock />
         </div>
         <!-- the grid container :3 -->

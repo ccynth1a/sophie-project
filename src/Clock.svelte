@@ -15,6 +15,6 @@
     })
 </script>
 
-<span class='col-start-2 bg-gray-800 mx-64'>
+<span class=" col-start-2 font-semibold " >
     {hour}:{mins}:{seconds}
 </span>
