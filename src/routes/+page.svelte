@@ -2,6 +2,7 @@
     import BarChart from '../BarChart.svelte';
     import Clock from '../Clock.svelte';
     import PieChart from '../PieChart.svelte';
+    import RadarChart from '../RadarChart.svelte';
     import SalesChart from '../SalesChart.svelte';
 
 </script>
@@ -35,6 +36,7 @@
                 </div>
             </div>
             <div class=" border-4 border-blue-400 rounded-lg p-4 col-span-1 ">
+                <RadarChart />
             </div>
         </div>
     </div>

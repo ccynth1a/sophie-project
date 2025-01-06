@@ -31,11 +31,43 @@
         plugins: {
             legend: {
                 position: 'top',
+                labels: {
+                    color: '#FFFFFF'
+                }
             },
             title: {
+                color: '#FFFFFF',
                 display: true,
                 text: 'Sales by Age Group'
             }
+        },
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Age Group',
+                    color: '#FFFFFF'
+                },
+                ticks: {
+                    color: '#E9E9E9'
+                },
+                grid: {
+                    color: '#BBBBBB'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Total Sales',
+                    color: '#FFFFFF'
+                },
+                ticks: {
+                    color: '#E9E9E9'
+                },
+                grid: {
+                    color: '#BBBBBB'
+                }
+            },
         }
     }
 </script>
