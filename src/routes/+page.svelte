@@ -21,20 +21,25 @@
     <div class=" text-white text-4xl m-2 font-bold ">
         Dashboard
     </div>
-    <div class=" flex gap-4 flex-wrap ">
-        <div class=" bg-gray-900 rounded-lg p-4 flex-grow w-[512px]">
+    <div class=" flex gap-4 flex-wrap  ">
+        <!-- Revenue by location -->
+        <div class=" bg-gray-900 rounded-lg p-4 w-[512px] ">
             <RadarChart />
         </div>
-        <div class=" bg-gray-900 rounded-lg p-4 flex-grow w-[512px] h-[246px]">
+        <!-- Sales by age group -->
+        <div class=" bg-gray-900 rounded-lg p-4 w-[512px] ">
             <BarChart />
         </div>
-        <div class=" bg-gray-900 rounded-lg p-4 flex-grow ">
+        <!-- Spending by gender -->
+        <div class=" bg-gray-900 rounded-lg p-4 ">
             <PieChart />
         </div>
-        <div class=" bg-gray-900 rounded-lg p-4/2 flex-grow  ">
+        <!-- Daily Sales -->
+        <div class=" bg-gray-900 rounded-lg p-4/2 ">
             <SalesChart />
         </div>
-        <div class=" bg-gray-900 rounded-lg p-4/2 flex-grow  ">
+        <!-- Daily Customers -->
+        <div class=" bg-gray-900 rounded-lg p-4/2 ">
             <CustomersChart />
         </div>
     </div>
