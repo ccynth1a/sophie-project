@@ -2,6 +2,7 @@
     import salesJSON from '$lib/sales.json'
     import { json } from '@sveltejs/kit';
     import { onMount } from 'svelte';
+    import { Chart } from 'chart.js/auto';
 
     const calculateSalesByGender = () => {
         let genderSales = {
@@ -21,7 +22,31 @@
                     genderSales.Other++;
            } 
         });
-        return JSON.stringify(genderSales)
+        return genderSales
+    }
+
+    const calculateSalesByAge = () => {
+        let ageSales = {
+            under18: 0,
+            youngAdult: 0,
+            adult: 0,
+            middleAged: 0,
+            elderly: 0
+        }
+        salesJSON.sales.forEach(sale => {
+            if (sale.age < 18) {
+                ageSales.under18++;
+            } else if (sale.age < 25) {
+                ageSales.youngAdult++;
+            } else if (sale.age < 40) {
+                ageSales.adult++;
+            } else if (sale.age < 65) {
+                ageSales.middleAged++;
+            } else {
+                ageSales.elderly++;
+            }
+        })
+        return ageSales
     }
 </script>
 
