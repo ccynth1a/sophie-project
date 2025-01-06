@@ -1,8 +1,4 @@
 <script lang="ts">
-    import salesJSON from '$lib/sales.json'
-    import { json } from '@sveltejs/kit';
-    import { onMount } from 'svelte';
-    import Chart from '../Chart.svelte';
     import PieChart from '../PieChart.svelte';
     import SalesChart from '../SalesChart.svelte';
 
