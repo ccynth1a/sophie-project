@@ -20,8 +20,17 @@
 </script>
 
 <!--PHOEBE GO WILD HERE-->
-<p>
-    Avg Age: {averageAge}
-    Avg Spending Per Customer: {averageSpending}
-    Avg Daily Revenue: {averageDailyRevenue}
-</p>
+<div class=" gap-4 grid grid-cols-4 text-white ">
+    <div class=" card ">
+        Avg Age: {averageAge}
+    </div>
+    <div class="card">
+        Total Revenue: {totalRevenue}
+    </div>
+    <div class=" card ">
+        Avg Spending Per Customer: {averageSpending}
+    </div>
+    <div class=" card ">
+        Avg Daily Revenue: {averageDailyRevenue}
+    </div>
+</div>

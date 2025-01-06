@@ -2,6 +2,7 @@
     import BarChart from '../BarChart.svelte';
     import Clock from '../Clock.svelte';
     import CustomersChart from '../CustomersChart.svelte';
+    import Metrics from '../Metrics.svelte';
     import PieChart from '../PieChart.svelte';
     import RadarChart from '../RadarChart.svelte';
     import SalesChart from '../SalesChart.svelte';
@@ -22,17 +23,7 @@
         Dashboard
     </div> -->
     <!-- Totals -->
-    <div class=" gap-4 grid grid-cols-3 text-white ">
-        <div class=" card ">
-            Total Sales :
-        </div>
-        <div class=" card ">
-            Total Sales :
-        </div>
-        <div class=" card ">
-            Total Sales :
-        </div>
-    </div>
+    <Metrics />
     <!-- Charts :) -->
     <div class=" mt-4 gap-4 grid grid-cols-4 ">
         <!-- Revenue by location -->
