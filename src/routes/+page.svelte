@@ -68,4 +68,7 @@
         width: 100%;
         padding: 1rem;
     }
+    .card:hover{
+        background: #1f2937;
+    }
 </style>
