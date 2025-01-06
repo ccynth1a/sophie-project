@@ -4,27 +4,6 @@
     import { onMount } from 'svelte';
     import { Chart } from 'chart.js/auto';
 
-    const calculateSalesByGender = () => {
-        let genderSales = {
-            Male: 0,
-            Female: 0,
-            Other: 0
-        }
-        salesJSON.sales.forEach(sale => {
-           switch (sale.gender) {
-                case "Male":
-                    genderSales.Male++;
-                    break;
-                case "Female":
-                    genderSales.Female++;
-                    break;
-                default:
-                    genderSales.Other++;
-           } 
-        });
-        return genderSales
-    }
-
     const calculateSalesByAge = () => {
         let ageSales = {
             under18: 0,
@@ -48,6 +27,35 @@
         })
         return ageSales
     }
+
+    const genderSales = salesJSON.sales.reduce((accumulator: any, sale) => {
+        accumulator[sale.gender] = (accumulator[sale.gender] || 0) + sale.total_spent;
+        return accumulator;
+    }, {});
+
+    const pieChartData = {
+        labels: Object.keys(genderSales),
+        datasets: [
+            {
+                label: 'Total Spending',
+                data: Object.values(genderSales),
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'], // @PHOEBE
+            }
+        ]
+    }
+
+    const pieChartOptions = {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top'
+            },
+            title: {
+                display: true,
+                text: "Spending By Gender"
+            }
+        }
+    };
 </script>
 
 <!-- <p>Sales: {calculateSalesByGender()}</p> -->
