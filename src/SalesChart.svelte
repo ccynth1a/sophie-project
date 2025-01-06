@@ -8,7 +8,7 @@
     }, {})
                                                                                                  
     const data = {
-        labels: Object.keys(dailySales),
+        labels: Object.keys(dailySales).sort((a,b) => new Date(a).getTime() - new Date(b).getTime()),
         datasets: [
             {
                 label: 'Total Sales',
