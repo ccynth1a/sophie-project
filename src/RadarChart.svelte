@@ -14,7 +14,7 @@
         labels: labels,
         datasets: [
             {
-                label: 'Total Sales By Location',
+                label: 'Gross Sales By Location',
                 data: salesData,
                 borderColor: '#FFCE56',
                 backgroundColor: 'rgba(255, 206, 86, 0.2)', 
@@ -38,7 +38,7 @@
             },
             title: {
                 display: true,
-                text: "Sales by Location",
+                text: "Revenue by Location",
                 color: '#FFFFFF'
             }
         },

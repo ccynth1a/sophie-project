@@ -22,6 +22,8 @@ You're then free to start editing. When you want to view your site, open a web s
 npm run dev
 ```
 
+I recommend installing the Svelte vscode extension naturally, otherwise itll just be white text.
+
 I've not included any adapters to actually deploy this application, so this is the only way you can use it for now until you add the adapter (i doubt sophie would want a production version anyways)
 
 ## I need to "edit" this repository, where should I start?
