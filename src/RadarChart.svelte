@@ -8,7 +8,7 @@
     }, {})
 
     const labels = Object.keys(salesByLocation);
-    const salesData = Object.values(salesByLocation);
+    const salesData: any = Object.values(salesByLocation);
 
     const data = {
         labels: labels,
