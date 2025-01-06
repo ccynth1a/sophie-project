@@ -52,7 +52,7 @@
             },
             title: {
                 display: true,
-                text: "Spending By Gender"
+                text: "Spending By Gender",
             }
         }
     };
