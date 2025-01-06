@@ -16,8 +16,8 @@
                 data: Object.values(genderSales),
                 backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56', '#35CE56'], // @PHOEBE - these r the colors used in the pie chart
                 color: '#FFFFFF', // @PHOEBE - this changes the text colour :33
-                borderColor: '#BBBBBB',
-                borderWidth: 1,
+                borderColor: '#111827',
+                borderWidth: 2,
             }
         ]
     }

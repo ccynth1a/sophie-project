@@ -18,29 +18,52 @@
         <!-- <Clock /> -->
     </div>
     <!-- the grid container :3 -->
-    <div class=" text-white text-4xl m-2 font-bold ">
+    <!-- <div class=" text-white text-4xl m-2 font-bold ">
         Dashboard
+    </div> -->
+    <!-- Totals -->
+    <div class=" gap-4 grid grid-cols-3 text-white ">
+        <div class=" card ">
+            Total Sales :
+        </div>
+        <div class=" card ">
+            Total Sales :
+        </div>
+        <div class=" card ">
+            Total Sales :
+        </div>
     </div>
-    <div class=" flex gap-4 flex-wrap  ">
+    <!-- Charts :) -->
+    <div class=" mt-4 gap-4 grid grid-cols-4 ">
         <!-- Revenue by location -->
-        <div class=" bg-gray-900 rounded-lg p-4 w-[512px] ">
+        <div class=" card ">
             <RadarChart />
         </div>
         <!-- Sales by age group -->
-        <div class=" bg-gray-900 rounded-lg p-4 w-[512px] ">
+        <div class=" card col-span-2">
             <BarChart />
         </div>
         <!-- Spending by gender -->
-        <div class=" bg-gray-900 rounded-lg p-4 ">
+        <div class=" card ">
             <PieChart />
         </div>
         <!-- Daily Sales -->
-        <div class=" bg-gray-900 rounded-lg p-4/2 ">
+        <div class=" card col-span-2">
             <SalesChart />
         </div>
         <!-- Daily Customers -->
-        <div class=" bg-gray-900 rounded-lg p-4/2 ">
+        <div class=" card col-span-2">
             <CustomersChart />
         </div>
     </div>
 </div>
+
+<style>
+    .card{
+        background: #111827;
+        border-radius: 0.5rem;
+        height: 100%;
+        width: 100%;
+        padding: 1rem;
+    }
+</style>
