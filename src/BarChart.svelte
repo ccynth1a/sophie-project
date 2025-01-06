@@ -2,6 +2,7 @@
     import salesJSON from "$lib/sales.json"
     import Chart from "./Chart.svelte";
 
+    // Age groups with defined bounds for the bar chart
     const ageGroups = [
         { name: 'Under 18', min: 0, max: 17 },
         { name: '18-25', min: 18, max: 25 },

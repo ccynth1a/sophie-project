@@ -1,3 +1,4 @@
+<!-- THIS IS A GENERIC CHART COMPONENT WHICH WILL HAVE ITS OPTIONS PASSED DOWN AS PROPS. THIS IS JUST BOILERPLATE PREVENTION -->
 <script lang="ts">
     import { onMount} from "svelte";
     import { Chart } from "chart.js/auto";

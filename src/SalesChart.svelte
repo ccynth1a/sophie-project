@@ -2,6 +2,7 @@
     import salesJSON from "$lib/sales.json"
     import Chart from "./Chart.svelte";
 
+    // Calculate the total sales for each unique day
     const dailySales = salesJSON.sales.reduce((accumulator: any, sale) => {
         accumulator[sale.purchase_date] = (accumulator[sale.purchase_date] || 0) + sale.total_spent;
         return accumulator

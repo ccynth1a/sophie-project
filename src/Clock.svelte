@@ -1,4 +1,5 @@
 <script lang="ts">
+    // CURRENTLY UNUSED COMPONENT
     import { onMount } from "svelte";
 
     let hour = $state(0);

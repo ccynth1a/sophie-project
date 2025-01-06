@@ -9,10 +9,10 @@
 
     import salesJSON from "$lib/sales.json"
 
-    const dates = salesJSON.sales.map(sale => new Date(sale.purchase_date));
+    const dates = salesJSON.sales.map(sale => new Date(sale.purchase_date)); // get all unique dates
 
-    const start = new Date(Math.min(...dates.map(date => date.getTime()))).toISOString().split('T')[0];
-    const end = new Date(Math.max(...dates.map(date => date.getTime()))).toISOString().split('T')[0];
+    const start = new Date(Math.min(...dates.map(date => date.getTime()))).toISOString().split('T')[0]; // calculate start date
+    const end = new Date(Math.max(...dates.map(date => date.getTime()))).toISOString().split('T')[0]; // calculate end date
 
 
 </script>

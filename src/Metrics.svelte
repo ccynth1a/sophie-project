@@ -1,6 +1,8 @@
 <script lang="ts">
+    // Simple Metrics Calculation for Header Bar
     import salesJSON from "$lib/sales.json"
 
+    // All functions below are self explanatory and do what they say. Each creates a variable to be rendered in the HTML below
     const averageAge = salesJSON.sales.reduce((acc, curr) => {
         return acc + curr.age;
     }, 0) / salesJSON.sales.length;
@@ -16,11 +18,11 @@
 
     const totalDays = Object.keys(dailyRevenue).length // get number of unique dates
     const totalRevenue = Object.values(dailyRevenue).reduce((acc, rev) => acc + rev, 0);
-    const averageDailyRevenue = totalDays > 0 ? totalRevenue / totalDays : 0;
+    const averageDailyRevenue = totalDays > 0 ? totalRevenue / totalDays : 0; // <- ternary to prevent divide by 0
 
     const insertCommas = (x) => {
         x = x.toString();
-        let pattern = /(-?\d+)(\d{3})/;
+        let pattern = /(-?\d+)(\d{3})/; // unholy regex sent down by the gods of stack overflow
         while (pattern.test(x)) 
             x = x.replace(pattern, "$1,$2");
         return x;

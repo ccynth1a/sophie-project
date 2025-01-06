@@ -2,6 +2,7 @@
     import salesJSON from "$lib/sales.json"
     import Chart from "./Chart.svelte";
 
+    // Get the number of customers per each unique day
     const dailyCustomers = salesJSON.sales.reduce((prevSale: any, sale) => {
         prevSale[sale.purchase_date] = (prevSale[sale.purchase_date] || 0) + 1;
         return prevSale;
