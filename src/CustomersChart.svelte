@@ -3,7 +3,7 @@
     import Chart from "./Chart.svelte";
 
     const dailyCustomers = salesJSON.sales.reduce((prevSale: any, sale) => {
-        prevSale[sale.purchase_date]++;
+        prevSale[sale.purchase_date] = (prevSale[sale.purchase_date] || 0) + 1;
         return prevSale;
     }, {})
                                                                                                  
