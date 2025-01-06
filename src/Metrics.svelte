@@ -17,20 +17,42 @@
     const totalDays = Object.keys(dailyRevenue).length // get number of unique dates
     const totalRevenue = Object.values(dailyRevenue).reduce((acc, rev) => acc + rev, 0);
     const averageDailyRevenue = totalDays > 0 ? totalRevenue / totalDays : 0;
+
+    const insertCommas = (x) => {
+        x = x.toString();
+        let pattern = /(-?\d+)(\d{3})/;
+        while (pattern.test(x)) 
+            x = x.replace(pattern, "$1,$2");
+        return x;
+    }
 </script>
 
 <!--PHOEBE GO WILD HERE-->
 <div class=" gap-4 grid grid-cols-4 text-white ">
     <div class=" card ">
-        Avg Age: {averageAge}
+        <p class=" text-sm text-gray-200 font-medium">Avg Age</p>
+        <p class=" text-2xl font-semibold " >{averageAge.toFixed(0)}</p>
     </div>
     <div class="card">
-        Total Revenue: {totalRevenue}
+        <p class=" text-sm text-gray-200 font-medium ">Total Revenue</p>
+        <p class=" text-2xl font-semibold ">$ {insertCommas(totalRevenue.toFixed(2))}</p>
     </div>
     <div class=" card ">
-        Avg Spending Per Customer: {averageSpending}
+        <p class=" text-sm text-gray-200 font-medium ">Avg Spending Per Customer</p>
+        <p class=" text-2xl font-semibold ">$ {averageSpending.toFixed(2)}</p>
     </div>
     <div class=" card ">
-        Avg Daily Revenue: {averageDailyRevenue}
+        <p class=" text-sm text-gray-200 font-medium ">Avg Daily Revenue</p>
+        <p class=" text-2xl font-semibold ">$ {insertCommas(averageDailyRevenue.toFixed(2))}</p>
     </div>
 </div>
+
+<style>
+    .card{
+        background: #111827;
+        border-radius: 0.5rem;
+        height: 100%;
+        width: 100%;
+        padding: 1rem;
+    }
+</style>

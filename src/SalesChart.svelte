@@ -13,7 +13,7 @@
             {
                 label: 'Total Sales',
                 data: Object.values(dailySales),
-                borderColor: '#FFCE56', // @PHOEBE - the line colour
+                borderColor: '#4BC0C0', // @PHOEBE - the line colour
                 tension: 0.4, // @PHOEBE - that boogleersing of the lines connecting eachtoher
                 fill: false
             }

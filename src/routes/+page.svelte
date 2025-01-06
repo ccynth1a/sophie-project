@@ -18,10 +18,13 @@
     <div class=" grid grid-cols-3 justify-center text-center items-center " >
         <!-- <Clock /> -->
     </div>
-    <!-- the grid container :3 -->
-    <!-- <div class=" text-white text-4xl m-2 font-bold ">
-        Dashboard
-    </div> -->
+    <!-- header thnang -->
+    <div class=" text-white ">
+        <div class=" text-4xl font-semibold " > Dashboard </div>
+        <div class=" text-2xl mt-2 mb-4 font-thin ">
+            Showing Stats between 2024-01-01 and 2024-01-07
+        </div>
+    </div>
     <!-- Totals -->
     <Metrics />
     <!-- Charts :) -->

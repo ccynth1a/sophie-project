@@ -13,7 +13,7 @@
             {
                 label: 'Total Customers',
                 data: Object.values(dailyCustomers),
-                borderColor: '#FFCE56', // @PHOEBE - the line colour
+                borderColor: '#9966FF', // @PHOEBE - the line colour
                 tension: 0.4, // @PHOEBE - that boogleersing of the lines connecting eachtoher
                 fill: false
             }
