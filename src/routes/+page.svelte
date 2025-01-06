@@ -2,7 +2,7 @@
     import salesJSON from '$lib/sales.json'
     import { json } from '@sveltejs/kit';
     import { onMount } from 'svelte';
-    import { Chart } from 'chart.js/auto';
+    import Chart from '../Chart.svelte';
 
     const calculateSalesByAge = () => {
         let ageSales = {
@@ -78,7 +78,7 @@
             <!-- bottom right thang :3 -->
             <div class=" border-4 border-red-400 rounded-lg p-1 col-span-1 row-span-2 ">
                 PROGRAMS
-                <!-- <Chart type="pie" {chartData} {chartOptions} /> -->
+                <Chart type="pie" {pieChartData} {pieChartOptions} /> 
             </div>
             <div class=" border-4 border-blue-500 rounded-lg p-1 col-span-1 ">
                 NETWORK USAGE
