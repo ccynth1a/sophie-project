@@ -1,55 +1,314 @@
 {
-    "sales": [
-      {
-        "customer_id": 1,
-        "gender": "Female",
-        "age": 29,
-        "total_spent": 250.75,
-        "items_bought": 4,
-        "purchase_date": "2025-01-01",
-        "location": "New York",
-        "payment_method": "Credit Card"
-      },
-      {
-        "customer_id": 2,
-        "gender": "Male",
-        "age": 34,
-        "total_spent": 120.50,
-        "items_bought": 2,
-        "purchase_date": "2025-01-02",
-        "location": "Los Angeles",
-        "payment_method": "PayPal"
-      },
-      {
-        "customer_id": 3,
-        "gender": "Female",
-        "age": 41,
-        "total_spent": 89.99,
-        "items_bought": 1,
-        "purchase_date": "2025-01-03",
-        "location": "Chicago",
-        "payment_method": "Debit Card"
-      },
-      {
-        "customer_id": 4,
-        "gender": "Non-binary",
-        "age": 22,
-        "total_spent": 320.00,
-        "items_bought": 5,
-        "purchase_date": "2025-01-04",
-        "location": "San Francisco",
-        "payment_method": "Credit Card"
-      },
-      {
-        "customer_id": 5,
-        "gender": "Male",
-        "age": 30,
-        "total_spent": 450.25,
-        "items_bought": 8,
-        "purchase_date": "2025-01-05",
-        "location": "Houston",
-        "payment_method": "Apple Pay"
-      }
-    ]
+  "sales": [
+    {
+      "customer_id": 1,
+      "gender": "Female",
+      "age": 29,
+      "total_spent": 250.75,
+      "items_bought": 4,
+      "purchase_date": "2025-01-01",
+      "location": "New York",
+      "payment_method": "Credit Card"
+    },
+    {
+      "customer_id": 2,
+      "gender": "Male",
+      "age": 34,
+      "total_spent": 120.50,
+      "items_bought": 2,
+      "purchase_date": "2025-01-02",
+      "location": "Los Angeles",
+      "payment_method": "PayPal"
+    },
+    {
+      "customer_id": 3,
+      "gender": "Female",
+      "age": 17,
+      "total_spent": 89.99,
+      "items_bought": 1,
+      "purchase_date": "2025-01-03",
+      "location": "Chicago",
+      "payment_method": "Debit Card"
+    },
+    {
+      "customer_id": 4,
+      "gender": "Male",
+      "age": 65,
+      "total_spent": 320.00,
+      "items_bought": 5,
+      "purchase_date": "2025-01-04",
+      "location": "San Francisco",
+      "payment_method": "Credit Card"
+    },
+    {
+      "customer_id": 5,
+      "gender": "Female",
+      "age": 30,
+      "total_spent": 450.25,
+      "items_bought": 8,
+      "purchase_date": "2025-01-05",
+      "location": "Houston",
+      "payment_method": "Apple Pay"
+    },
+    {
+      "customer_id": 6,
+      "gender": "Male",
+      "age": 16,
+      "total_spent": 220.99,
+      "items_bought": 3,
+      "purchase_date": "2025-01-06",
+      "location": "Miami",
+      "payment_method": "Credit Card"
+    },
+    {
+      "customer_id": 7,
+      "gender": "Female",
+      "age": 58,
+      "total_spent": 99.75,
+      "items_bought": 2,
+      "purchase_date": "2025-01-07",
+      "location": "Dallas",
+      "payment_method": "PayPal"
+    },
+    {
+      "customer_id": 8,
+      "gender": "Male",
+      "age": 45,
+      "total_spent": 175.80,
+      "items_bought": 6,
+      "purchase_date": "2025-01-08",
+      "location": "Seattle",
+      "payment_method": "Credit Card"
+    },
+    {
+      "customer_id": 9,
+      "gender": "Female",
+      "age": 25,
+      "total_spent": 215.40,
+      "items_bought": 4,
+      "purchase_date": "2025-01-09",
+      "location": "Austin",
+      "payment_method": "Debit Card"
+    },
+    {
+      "customer_id": 10,
+      "gender": "Male",
+      "age": 19,
+      "total_spent": 330.15,
+      "items_bought": 5,
+      "purchase_date": "2025-01-10",
+      "location": "Denver",
+      "payment_method": "Apple Pay"
+    },
+    {
+      "customer_id": 11,
+      "gender": "Female",
+      "age": 72,
+      "total_spent": 128.45,
+      "items_bought": 3,
+      "purchase_date": "2025-01-11",
+      "location": "Phoenix",
+      "payment_method": "Credit Card"
+    },
+    {
+      "customer_id": 12,
+      "gender": "Male",
+      "age": 30,
+      "total_spent": 90.60,
+      "items_bought": 1,
+      "purchase_date": "2025-01-12",
+      "location": "San Diego",
+      "payment_method": "PayPal"
+    },
+    {
+      "customer_id": 13,
+      "gender": "Female",
+      "age": 35,
+      "total_spent": 299.40,
+      "items_bought": 6,
+      "purchase_date": "2025-01-13",
+      "location": "Las Vegas",
+      "payment_method": "Debit Card"
+    },
+    {
+      "customer_id": 14,
+      "gender": "Male",
+      "age": 28,
+      "total_spent": 180.80,
+      "items_bought": 4,
+      "purchase_date": "2025-01-14",
+      "location": "New York",
+      "payment_method": "Apple Pay"
+    },
+    {
+      "customer_id": 15,
+      "gender": "Female",
+      "age": 32,
+      "total_spent": 110.00,
+      "items_bought": 2,
+      "purchase_date": "2025-01-15",
+      "location": "Chicago",
+      "payment_method": "PayPal"
+    },
+    {
+      "customer_id": 16,
+      "gender": "Male",
+      "age": 27,
+      "total_spent": 499.50,
+      "items_bought": 9,
+      "purchase_date": "2025-01-16",
+      "location": "Houston",
+      "payment_method": "Credit Card"
+    },
+    {
+      "customer_id": 17,
+      "gender": "Female",
+      "age": 23,
+      "total_spent": 75.25,
+      "items_bought": 1,
+      "purchase_date": "2025-01-17",
+      "location": "Boston",
+      "payment_method": "Debit Card"
+    },
+    {
+      "customer_id": 18,
+      "gender": "Male",
+      "age": 63,
+      "total_spent": 125.65,
+      "items_bought": 3,
+      "purchase_date": "2025-01-18",
+      "location": "Los Angeles",
+      "payment_method": "Apple Pay"
+    },
+    {
+      "customer_id": 19,
+      "gender": "Female",
+      "age": 24,
+      "total_spent": 330.00,
+      "items_bought": 6,
+      "purchase_date": "2025-01-19",
+      "location": "Seattle",
+      "payment_method": "Credit Card"
+    },
+    {
+      "customer_id": 20,
+      "gender": "Male",
+      "age": 50,
+      "total_spent": 220.75,
+      "items_bought": 4,
+      "purchase_date": "2025-01-20",
+      "location": "Miami",
+      "payment_method": "PayPal"
+    },
+    {
+      "customer_id": 21,
+      "gender": "Female",
+      "age": 42,
+      "total_spent": 350.30,
+      "items_bought": 7,
+      "purchase_date": "2025-01-21",
+      "location": "Dallas",
+      "payment_method": "Debit Card"
+    },
+    {
+      "customer_id": 22,
+      "gender": "Male",
+      "age": 37,
+      "total_spent": 400.15,
+      "items_bought": 8,
+      "purchase_date": "2025-01-22",
+      "location": "Phoenix",
+      "payment_method": "Apple Pay"
+    },
+    {
+      "customer_id": 23,
+      "gender": "Female",
+      "age": 28,
+      "total_spent": 180.30,
+      "items_bought": 3,
+      "purchase_date": "2025-01-23",
+      "location": "San Francisco",
+      "payment_method": "PayPal"
+    },
+    {
+      "customer_id": 24,
+      "gender": "Male",
+      "age": 31,
+      "total_spent": 120.50,
+      "items_bought": 2,
+      "purchase_date": "2025-01-24",
+      "location": "Chicago",
+      "payment_method": "Credit Card"
+    },
+    {
+      "customer_id": 25,
+      "gender": "Female",
+      "age": 63,
+      "total_spent": 420.10,
+      "items_bought": 7,
+      "purchase_date": "2025-01-25",
+      "location": "Los Angeles",
+      "payment_method": "Debit Card"
+    },
+    {
+      "customer_id": 26,
+      "gender": "Male",
+      "age": 39,
+      "total_spent": 275.85,
+      "items_bought": 5,
+      "purchase_date": "2025-01-26",
+      "location": "San Diego",
+      "payment_method": "Apple Pay"
+    },
+    {
+      "customer_id": 27,
+      "gender": "Female",
+      "age": 40,
+      "total_spent": 99.90,
+      "items_bought": 2,
+      "purchase_date": "2025-01-27",
+      "location": "Austin",
+      "payment_method": "Credit Card"
+    },
+    {
+      "customer_id": 28,
+      "gender": "Male",
+      "age": 20,
+      "total_spent": 430.00,
+      "items_bought": 8,
+      "purchase_date": "2025-01-28",
+      "location": "New York",
+      "payment_method": "PayPal"
+    },
+    {
+      "customer_id": 29,
+      "gender": "Female",
+      "age": 27,
+      "total_spent": 155.40,
+      "items_bought": 3,
+      "purchase_date": "2025-01-29",
+      "location": "Seattle",
+      "payment_method": "Credit Card"
+    },
+    {
+      "customer_id": 30,
+      "gender": "Male",
+      "age": 65,
+      "total_spent": 390.75,
+      "items_bought": 6,
+      "purchase_date": "2025-01-30",
+      "location": "Houston",
+      "payment_method": "Apple Pay"
+    },
+    {
+      "customer_id": 31,
+      "gender": "Non-binary",
+      "age": 23,
+      "total_spent": 220.00,
+      "items_bought": 4,
+      "purchase_date": "2025-01-05",
+      "location": "Boston",
+      "payment_method": "PayPal"
+    }
+  ]
 }
-  
