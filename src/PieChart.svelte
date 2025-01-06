@@ -1,5 +1,6 @@
 <script lang="ts">
     import salesJSON from "$lib/sales.json"
+    import { color } from "chart.js/helpers";
     import Chart from "./Chart.svelte";
 
     const genderSales = salesJSON.sales.reduce((accumulator: any, sale) => {
@@ -14,7 +15,9 @@
                 label: 'Total Spending',
                 data: Object.values(genderSales),
                 backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'], // @PHOEBE - these r the colors used in the pie chart
-                color: '#FFFFFF' // @PHOEBE - this changes the text colour :33
+                color: '#FFFFFF', // @PHOEBE - this changes the text colour :33
+                borderColor: '#BBBBBB',
+                borderWidth: 1,
             }
         ]
     }
@@ -32,7 +35,7 @@
                 display: true,
                 text: "Spending By Gender",
                 color: '#FFFFFF' // @PHOEBE
-            }
+            },
         }
     };
 

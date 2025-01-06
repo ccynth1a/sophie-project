@@ -13,8 +13,8 @@
             {
                 label: 'Total Sales',
                 data: Object.values(dailySales),
-                borderColor: '#36A2EB', // @PHOEBE
-                tension: 0.4, // @PHOEBE
+                borderColor: '#FFCE56', // @PHOEBE - the line colour
+                tension: 0.4, // @PHOEBE - that boogleersing of the lines connecting eachtoher
                 fill: false
             }
         ]
@@ -24,24 +24,42 @@
         responsive: true,
         plugins: {
             legend: {
-                position: 'top' // @PHOEBE
+                position: 'top', // @PHOEBE
+                labels: {
+                    color: '#FFFFFF'
+                }
             },
             title: {
                 display: true,
-                text: "Daily Sales"
+                text: "Daily Sales",
+                color: '#FFFFFF'
             }
         },
         scales: {
             x: {
                 title: {
                     display: true,
-                    text: 'Date'
+                    text: 'Date',
+                    color: '#FFFFFF'
+                },
+                ticks: {
+                    color: '#E9E9E9'
+                },
+                grid: {
+                    color: '#BBBBBB'
                 }
             },
             y: {
                 title: {
                     display: true,
-                    text: "Total Sales"
+                    text: "Total Sales",
+                    color: '#FFFFFF'
+                },
+                ticks: {
+                    color: '#E9E9E9'
+                },
+                grid: {
+                    color: '#BBBBBB'
                 }
             }
         }
