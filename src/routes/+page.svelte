@@ -15,7 +15,7 @@
 <div class=" m-4 ">
     <div class=" p-4 bg-gray-800 text-white rounded-xl">
         <div class=" grid grid-cols-3 justify-center text-center items-center " >
-            <Clock />
+            <!-- <Clock /> -->
         </div>
         <!-- the grid container :3 -->
         <div class=" grid grid-cols-2 grid-rows-3 gap-4 h-[875px] ">

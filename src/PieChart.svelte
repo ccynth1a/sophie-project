@@ -14,7 +14,7 @@
             {
                 label: 'Total Spending',
                 data: Object.values(genderSales),
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'], // @PHOEBE - these r the colors used in the pie chart
+                backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56', '#35CE56'], // @PHOEBE - these r the colors used in the pie chart
                 color: '#FFFFFF', // @PHOEBE - this changes the text colour :33
                 borderColor: '#BBBBBB',
                 borderWidth: 1,
