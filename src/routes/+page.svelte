@@ -40,6 +40,7 @@
                 label: 'Total Spending',
                 data: Object.values(genderSales),
                 backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'], // @PHOEBE - these r the colors used in the pie chart
+                color: '#FFFFFF' // @PHOEBE
             }
         ]
     }
@@ -48,11 +49,15 @@
         responsive: true,
         plugins: {
             legend: {
-                position: 'top'
+                position: 'top',
+                labels: {
+                    color: '#FFFFFF' // @PHOEBE
+                }
             },
             title: {
                 display: true,
                 text: "Spending By Gender",
+                color: '#FFFFFF' // @PHOEBE
             }
         }
     };
