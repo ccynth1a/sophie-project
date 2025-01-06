@@ -35,15 +35,15 @@
     </div>
     <div class="card">
         <p class=" text-sm text-gray-200 font-medium ">Total Revenue</p>
-        <p class=" text-2xl font-semibold ">$ {insertCommas(totalRevenue.toFixed(2))}</p>
+        <p class=" text-2xl font-semibold ">£ {insertCommas(totalRevenue.toFixed(2))}</p>
     </div>
     <div class=" card ">
         <p class=" text-sm text-gray-200 font-medium ">Avg Spending Per Customer</p>
-        <p class=" text-2xl font-semibold ">$ {averageSpending.toFixed(2)}</p>
+        <p class=" text-2xl font-semibold ">£ {averageSpending.toFixed(2)}</p>
     </div>
     <div class=" card ">
         <p class=" text-sm text-gray-200 font-medium ">Avg Daily Revenue</p>
-        <p class=" text-2xl font-semibold ">$ {insertCommas(averageDailyRevenue.toFixed(2))}</p>
+        <p class=" text-2xl font-semibold">£ {insertCommas(averageDailyRevenue.toFixed(2))}</p>
     </div>
 </div>
 
@@ -54,5 +54,10 @@
         height: 100%;
         width: 100%;
         padding: 1rem;
+    }
+    .card:hover{
+        background: #1f2937;
+        position: relative;
+        bottom: 0.1rem;
     }
 </style>
