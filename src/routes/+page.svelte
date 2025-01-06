@@ -1,5 +1,6 @@
 <script lang="ts">
     import BarChart from '../BarChart.svelte';
+    import Clock from '../Clock.svelte';
     import PieChart from '../PieChart.svelte';
     import SalesChart from '../SalesChart.svelte';
 
@@ -13,7 +14,7 @@
 <div class=" m-4 ">
     <div class=" p-4 bg-gray-800 text-white rounded-xl">
         <div class=" relative top-3 grid grid-cols-3 justify-center text-center items-center " >
-            <div class=" col-start-2 bg-gray-800 mx-64">11:57</div>
+            <Clock />
         </div>
         <!-- the grid container :3 -->
         <div class=" grid grid-cols-2 grid-rows-3 gap-4 h-[875px] ">

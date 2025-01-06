@@ -3,6 +3,6 @@
     let time = $state(date.toLocaleTimeString())
 </script>
 
-<span>
+<span class=' col-start-2 bg-gray-800 mx-64'>
     {time}
 </span>
