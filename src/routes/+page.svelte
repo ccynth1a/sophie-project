@@ -1,6 +1,7 @@
 <script lang="ts">
     import BarChart from '../BarChart.svelte';
     import Clock from '../Clock.svelte';
+    import CustomersChart from '../CustomersChart.svelte';
     import PieChart from '../PieChart.svelte';
     import RadarChart from '../RadarChart.svelte';
     import SalesChart from '../SalesChart.svelte';
@@ -32,6 +33,9 @@
         </div>
         <div class=" bg-gray-900 rounded-lg p-4/2 flex-grow  ">
             <SalesChart />
+        </div>
+        <div class=" bg-gray-900 rounded-lg p-4/2 flex-grow  ">
+            <CustomersChart />
         </div>
     </div>
 </div>
