@@ -4,30 +4,6 @@
     import { onMount } from 'svelte';
     import Chart from '../Chart.svelte';
 
-    const calculateSalesByAge = () => {
-        let ageSales = {
-            under18: 0,
-            youngAdult: 0,
-            adult: 0,
-            middleAged: 0,
-            elderly: 0
-        }
-        salesJSON.sales.forEach(sale => {
-            if (sale.age < 18) {
-                ageSales.under18++;
-            } else if (sale.age < 25) {
-                ageSales.youngAdult++;
-            } else if (sale.age < 40) {
-                ageSales.adult++;
-            } else if (sale.age < 65) {
-                ageSales.middleAged++;
-            } else {
-                ageSales.elderly++;
-            }
-        })
-        return ageSales
-    }
-
     const genderSales = salesJSON.sales.reduce((accumulator: any, sale) => {
         accumulator[sale.gender] = (accumulator[sale.gender] || 0) + sale.total_spent;
         return accumulator;
@@ -61,6 +37,49 @@
             }
         }
     };
+
+    const dailySales = salesJSON.sales.reduce((accumulator: any, sale) => {
+        accumulator[sale.purchase_date] = (accumulator[sale.purchase_date] || 0) + sale.total_spent;
+        return accumulator
+    }, {})
+
+    const salesChartData = {
+        labels: Object.keys(dailySales),
+        datasets: {
+            label: 'Total Sales',
+            data: Object.values(dailySales),
+            borderColor: '#36A2EB', // @PHOEBE
+            tension: 0.4, // @PHOEBE
+            fill: false
+        }
+    }
+
+    const salesChartOptions = {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top' // @PHOEBE
+            },
+            title: {
+                display: true,
+                text: "Daily Sales"
+            }
+        },
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Date'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: "Total Sales"
+                }
+            }
+        }
+    }
 </script>
 
 <!-- <p>Sales: {calculateSalesByGender()}</p> -->
