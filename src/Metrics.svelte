@@ -11,13 +11,13 @@
         return acc + curr.total_spent;
     }, 0) / salesJSON.sales.length;
 
-    const dailyRevenue = salesJSON.sales.reduce((acc: any, sale) => {
+    const dailyRevenue: Record<string, number> = salesJSON.sales.reduce((acc: Record<string, number>, sale) => {
         acc[sale.purchase_date] = (acc[sale.purchase_date] || 0) + sale.total_spent;
         return acc
     }, {})
 
     const totalDays = Object.keys(dailyRevenue).length // get number of unique dates
-    const totalRevenue = Object.values(dailyRevenue).reduce((acc, rev) => acc + rev, 0);
+    const totalRevenue = Object.values(dailyRevenue).reduce((acc: number, rev: number) => acc + rev, 0);
     const averageDailyRevenue = totalDays > 0 ? totalRevenue / totalDays : 0; // <- ternary to prevent divide by 0
 
     const insertCommas = (x) => {
