@@ -3,83 +3,9 @@
     import { json } from '@sveltejs/kit';
     import { onMount } from 'svelte';
     import Chart from '../Chart.svelte';
+    import PieChart from '../PieChart.svelte';
+    import SalesChart from '../SalesChart.svelte';
 
-    const genderSales = salesJSON.sales.reduce((accumulator: any, sale) => {
-        accumulator[sale.gender] = (accumulator[sale.gender] || 0) + sale.total_spent;
-        return accumulator;
-    }, {});
-
-    const pieChartData = {
-        labels: Object.keys(genderSales),
-        datasets: [
-            {
-                label: 'Total Spending',
-                data: Object.values(genderSales),
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'], // @PHOEBE - these r the colors used in the pie chart
-                color: '#FFFFFF' // @PHOEBE - this changes the text colour :33
-            }
-        ]
-    }
-
-    const pieChartOptions = {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: 'top',
-                labels: {
-                    color: '#FFFFFF' // @PHOEBE
-                }
-            },
-            title: {
-                display: true,
-                text: "Spending By Gender",
-                color: '#FFFFFF' // @PHOEBE
-            }
-        }
-    };
-
-    const dailySales = salesJSON.sales.reduce((accumulator: any, sale) => {
-        accumulator[sale.purchase_date] = (accumulator[sale.purchase_date] || 0) + sale.total_spent;
-        return accumulator
-    }, {})
-
-    const salesChartData = {
-        labels: Object.keys(dailySales),
-        datasets: {
-            label: 'Total Sales',
-            data: Object.values(dailySales),
-            borderColor: '#36A2EB', // @PHOEBE
-            tension: 0.4, // @PHOEBE
-            fill: false
-        }
-    }
-
-    const salesChartOptions = {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: 'top' // @PHOEBE
-            },
-            title: {
-                display: true,
-                text: "Daily Sales"
-            }
-        },
-        scales: {
-            x: {
-                title: {
-                    display: true,
-                    text: 'Date'
-                }
-            },
-            y: {
-                title: {
-                    display: true,
-                    text: "Total Sales"
-                }
-            }
-        }
-    }
 </script>
 
 <!-- <p>Sales: {calculateSalesByGender()}</p> -->
@@ -97,13 +23,14 @@
                 </div>
                 <!-- middle left thang -->
                 <div class=" border-4 border-yellow-400 rounded-lg p-4 col-span-1 ">
+                    <SalesChart />
                     yammeerrring yellow
                 </div>
                 <!-- bottom right thang :3 -->
                 <div class=" border-4 border-red-400 rounded-lg p-4 col-span-1 row-span-2 ">
                     <div class=" grid grid-rows-1 grid-cols-3 w-fit h-full ">
                         <div>hee</div>
-                        <Chart type="pie" data={pieChartData} options={pieChartOptions} />
+                        <PieChart />
                     </div>
                 </div>
                 <div class=" border-4 border-blue-400 rounded-lg p-4 col-span-1 ">
