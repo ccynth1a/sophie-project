@@ -1,11 +1,12 @@
-# Soapie Project
+# Sophie Dashboard Project
 
 ![image](https://github.com/user-attachments/assets/e4b79237-602b-46e6-b1c3-165624ee78f6)
 
-This is a quick project to fulfill a horrible set of requirements we got given over the Christmas break (WHO SETS A 30+ HOUR PROJECT OVER THE CHRISTMAS HOLIDAYS?!?!?!?!??!!?!?!?!? AND DOESNT PROVIDE AN EXAMPLE?!?!?!?!?). Here's some instructions for how to clone and edit it to "provide a base to work off of" ;)
+This is a quick project to fulfill a horrible set of requirements we got given over the Christmas break at college. Below are some instructions for how to clone and edit it to "provide a base to work off of" ;)
+
+Actually very proud of how this turned out though, Phlobism did a great job with the design!!!!!!
 
 ## Made by Phlobism and CCynth1a
-
 *it's not ikuyover till there's no [insert clever and witty pun here]*
 
 ## Setting up your Dev Environment
@@ -16,7 +17,7 @@ First, clone the repo. You can do this via git if you know how, or just download
 npm i
 ```
 
-This will take a few seconds, and will install of the development dependencies.
+This will take a few seconds, and will install all of the dependencies.
 
 You're then free to start editing. When you want to view your site, open a web server using:
 
@@ -24,7 +25,7 @@ You're then free to start editing. When you want to view your site, open a web s
 npm run dev
 ```
 
-I recommend installing the Svelte vscode extension naturally, otherwise itll just be white text.
+I recommend installing the Svelte VSCode extension naturally, otherwise itll just be white text.
 
 I've not included any adapters to actually deploy this application, so this is the only way you can use it for now until you add the adapter (i doubt sophie would want a production version anyways)
 
