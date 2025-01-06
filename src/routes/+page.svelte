@@ -18,25 +18,19 @@
             <!-- <Clock /> -->
         </div>
         <!-- the grid container :3 -->
-        <div class=" grid grid-cols-2 grid-rows-4 gap-4 h-[875px] ">
-            <!-- top thang :3 -->
-            <div class=" border-4 border-green-400 rounded-lg p-4 col-span-2 ">
+        <!-- <div class=" grid grid-cols-2 grid-rows-4 gap-4 "> -->
+        <div class=" flex gap-4 flex-wrap ">
+            <div class=" border-4 border-green-400 rounded-lg p-4 w-1/4 flex-grow ">
                 <RadarChart />
             </div>
-            <!-- middle left thang -->
-            <div class=" border-4 border-yellow-400 rounded-lg p-4 col-span-1 row-span-2 ">
-                <SalesChart />
-            </div>
-            <!-- bottom right thang :3 -->
-            <div class=" border-4 border-red-400 rounded-lg p-4 col-span-1 row-span-3 ">
-                <div class=" 2xl:grid 2xl:grid-rows-1 2xl:grid-cols-5 ">
-                    <div class=" col-span-3 col-start-2 ">
-                        <PieChart />
-                    </div>
-                </div>
-            </div>
-            <div class=" border-4 border-blue-400 rounded-lg p-4 col-span-1 ">
+            <div class=" border-4 border-blue-400 rounded-lg p-4 w-fit flex-grow ">
                 <BarChart />
+            </div>
+            <div class=" border-4 border-red-400 rounded-lg p-4 w-fit flex-grow ">
+                <PieChart />
+            </div>
+            <div class=" border-4 border-yellow-400 rounded-lg p-4 w-1/2 flex-grow ">
+                <SalesChart />
             </div>
         </div>
     </div>
