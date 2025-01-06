@@ -56,7 +56,8 @@
                     color: '#FFFFFF'
                 },
                 ticks: {
-                    color: '#E9E9E9'
+                    color: '#E9E9E9',
+                    min: 0,
                 },
                 grid: {
                     color: '#BBBBBB'
