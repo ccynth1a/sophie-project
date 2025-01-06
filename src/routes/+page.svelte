@@ -40,7 +40,7 @@
                 label: 'Total Spending',
                 data: Object.values(genderSales),
                 backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'], // @PHOEBE - these r the colors used in the pie chart
-                color: '#FFFFFF' // @PHOEBE
+                color: '#FFFFFF' // @PHOEBE - this changes the text colour :33
             }
         ]
     }
