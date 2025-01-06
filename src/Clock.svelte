@@ -1,16 +1,20 @@
 <script lang="ts">
     import { onMount } from "svelte";
 
-    let date = new Date();
-    let time = $state(date.toLocaleTimeString())
+    let hour = $state(0);
+    let mins = $state(0);
+    let seconds = $state(0);
 
     onMount(() => {
         setInterval(() => {
-           time = date.getDate().toLocaleString()
+            const date = new Date();
+            hour = date.getHours();
+            mins = date.getMinutes();
+            seconds = date.getSeconds();
         }, 100);
     })
 </script>
 
-<span class=' col-start-2 bg-gray-800 mx-64'>
-    {time}
+<span class='col-start-2 bg-gray-800 mx-64'>
+    {hour}:{mins}:{seconds}
 </span>
