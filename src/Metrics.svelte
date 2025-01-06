@@ -20,12 +20,12 @@
     const totalRevenue = Object.values(dailyRevenue).reduce((acc: number, rev: number) => acc + rev, 0);
     const averageDailyRevenue = totalDays > 0 ? totalRevenue / totalDays : 0; // <- ternary to prevent divide by 0
 
-    const insertCommas = (x) => {
-        x = x.toString();
+    const insertCommas = (x: number) => {
+        let stringified = x.toString();
         let pattern = /(-?\d+)(\d{3})/; // unholy regex sent down by the gods of stack overflow
-        while (pattern.test(x)) 
-            x = x.replace(pattern, "$1,$2");
-        return x;
+        while (pattern.test(stringified)) 
+            stringified = stringified.replace(pattern, "$1,$2");
+        return stringified;
     }
 </script>
 
