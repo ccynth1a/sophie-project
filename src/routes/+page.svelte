@@ -82,7 +82,10 @@
                 </div>
                 <!-- bottom right thang :3 -->
                 <div class=" border-4 border-red-400 rounded-lg p-4 col-span-1 row-span-2 ">
-                    <Chart type="pie" data={pieChartData} options={pieChartOptions} />
+                    <div class=" grid grid-rows-1 grid-cols-3 w-fit h-full ">
+                        <div>hee</div>
+                        <Chart type="pie" data={pieChartData} options={pieChartOptions} />
+                    </div>
                 </div>
                 <div class=" border-4 border-blue-400 rounded-lg p-4 col-span-1 ">
                     blue waffles
