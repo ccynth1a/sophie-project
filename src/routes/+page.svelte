@@ -13,25 +13,25 @@
 <!-- <div class=" bg-black py-8 "></div> -->
 <!-- the container of the main page :3 -->
 <div class=" m-4 ">
-    <div class=" p-4 bg-gray-800 text-white rounded-xl">
-        <div class=" grid grid-cols-3 justify-center text-center items-center " >
-            <!-- <Clock /> -->
+    <div class=" grid grid-cols-3 justify-center text-center items-center " >
+        <!-- <Clock /> -->
+    </div>
+    <!-- the grid container :3 -->
+    <div class=" text-white text-4xl m-2 font-bold ">
+        Dashboard
+    </div>
+    <div class=" flex gap-4 flex-wrap ">
+        <div class=" bg-gray-900 rounded-lg p-4 flex-grow w-[512px]">
+            <RadarChart />
         </div>
-        <!-- the grid container :3 -->
-        <!-- <div class=" grid grid-cols-2 grid-rows-4 gap-4 "> -->
-        <div class=" flex gap-4 flex-wrap ">
-            <div class=" border-4 border-green-400 rounded-lg p-4 w-1/4 flex-grow ">
-                <RadarChart />
-            </div>
-            <div class=" border-4 border-blue-400 rounded-lg p-4 w-fit flex-grow ">
-                <BarChart />
-            </div>
-            <div class=" border-4 border-red-400 rounded-lg p-4 w-fit flex-grow ">
-                <PieChart />
-            </div>
-            <div class=" border-4 border-yellow-400 rounded-lg p-4 w-1/2 flex-grow ">
-                <SalesChart />
-            </div>
+        <div class=" bg-gray-900 rounded-lg p-4 flex-grow w-[512px] h-[246px]">
+            <BarChart />
+        </div>
+        <div class=" bg-gray-900 rounded-lg p-4 flex-grow ">
+            <PieChart />
+        </div>
+        <div class=" bg-gray-900 rounded-lg p-4/2 flex-grow  ">
+            <SalesChart />
         </div>
     </div>
 </div>
