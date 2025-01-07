@@ -3,7 +3,7 @@
     import Chart from "./Chart.svelte";
 
     // Calculate the total sales for each unique location
-    const salesByLocation = salesJSON.sales.reduce((accumulator: any, sale) => {
+    const salesByLocation: number[] = salesJSON.sales.reduce((accumulator: any, sale) => {
         accumulator[sale.location] = (accumulator[sale.location] || 0) + sale.total_spent;
         return accumulator
     }, {})

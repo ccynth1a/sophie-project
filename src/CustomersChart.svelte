@@ -1,5 +1,6 @@
 <script lang="ts">
     import salesJSON from "$lib/sales.json"
+    import type { Sale } from "$lib/types";
     import Chart from "./Chart.svelte";
 
     // Get the number of customers per each unique day

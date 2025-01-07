@@ -1,6 +1,7 @@
 <script lang="ts">
     import salesJSON from "$lib/sales.json"
     import Chart from "./Chart.svelte";
+    import type { Sale } from "$lib/types";
 
     // Age groups with defined bounds for the bar chart
     const ageGroups = [
@@ -11,8 +12,8 @@
         { name: '60+', min: 61, max: Infinity },
     ];
 
-    const ageSales = ageGroups.map(group => {
-        return salesJSON.sales.filter(sale => sale.age >= group.min && sale.age <= group.max).length;
+    const ageSales: number[] = ageGroups.map(group => {
+        return salesJSON.sales.filter((sale: Sale) => sale.age >= group.min && sale.age <= group.max).length;
     })
 
     const data = {

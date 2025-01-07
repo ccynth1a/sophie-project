@@ -8,8 +8,9 @@
     import SalesChart from '../SalesChart.svelte';
 
     import salesJSON from "$lib/sales.json"
+    import type { Sale } from '$lib/types';
 
-    const dates = salesJSON.sales.map(sale => new Date(sale.purchase_date)); // get all unique dates
+    const dates: Date[] = salesJSON.sales.map(sale => new Date(sale.purchase_date)); // get all unique dates
 
     const start = new Date(Math.min(...dates.map(date => date.getTime()))).toISOString().split('T')[0]; // calculate start date
     const end = new Date(Math.max(...dates.map(date => date.getTime()))).toISOString().split('T')[0]; // calculate end date

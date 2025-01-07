@@ -4,7 +4,7 @@
     import Chart from "./Chart.svelte";
 
     // Calculate the sales for each unique gender
-    const genderSales = salesJSON.sales.reduce((accumulator: any, sale) => {
+    const genderSales: number[] = salesJSON.sales.reduce((accumulator: any, sale) => {
         accumulator[sale.gender] = (accumulator[sale.gender] || 0) + sale.total_spent;
         return accumulator;
     }, {});

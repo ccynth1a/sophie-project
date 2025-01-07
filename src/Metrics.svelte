@@ -3,11 +3,11 @@
     import salesJSON from "$lib/sales.json"
 
     // All functions below are self explanatory and do what they say. Each creates a variable to be rendered in the HTML below
-    const averageAge = salesJSON.sales.reduce((acc, curr) => {
+    const averageAge: number = salesJSON.sales.reduce((acc, curr) => {
         return acc + curr.age;
     }, 0) / salesJSON.sales.length;
 
-    const averageSpending = salesJSON.sales.reduce((acc, curr) => {
+    const averageSpending: number = salesJSON.sales.reduce((acc, curr) => {
         return acc + curr.total_spent;
     }, 0) / salesJSON.sales.length;
 
@@ -16,9 +16,9 @@
         return acc
     }, {})
 
-    const totalDays = Object.keys(dailyRevenue).length // get number of unique dates
-    const totalRevenue = Object.values(dailyRevenue).reduce((acc: number, rev: number) => acc + rev, 0);
-    const averageDailyRevenue = totalDays > 0 ? totalRevenue / totalDays : 0; // <- ternary to prevent divide by 0
+    const totalDays: number = Object.keys(dailyRevenue).length // get number of unique dates
+    const totalRevenue: number = Object.values(dailyRevenue).reduce((acc: number, rev: number) => acc + rev, 0);
+    const averageDailyRevenue: number = totalDays > 0 ? totalRevenue / totalDays : 0; // <- ternary to prevent divide by 0
 
     const insertCommas = (x: number) => {
         let stringified = x.toString();
