@@ -1,15 +1,24 @@
 <script lang="ts">
+    import { databaseQueryData } from "$lib/globals";
     import salesJSON from "$lib/sales.json"
     import Chart from "./Chart.svelte";
 
-    // Calculate the total sales for each unique location
-    const salesByLocation: number[] = salesJSON.sales.reduce((accumulator: any, sale) => {
-        accumulator[sale.location] = (accumulator[sale.location] || 0) + sale.total_spent;
-        return accumulator
-    }, {})
+    import type { Sale } from "$lib/types";
 
-    const labels = Object.keys(salesByLocation);
-    const salesData: any = Object.values(salesByLocation);
+    let salesByLocation: number[] = [];
+    let labels: string[] = []
+    let salesData: number[] = []
+    
+    // Calculate the total sales for each unique location
+    const unsubscribe = databaseQueryData.subscribe(data => {
+        salesByLocation = data.reduce((accumulator: any, sale) => {
+            accumulator[sale.location] = (accumulator[sale.location] || 0) + sale.total_spent;
+            return accumulator
+        }, {});
+
+        labels = Object.keys(salesByLocation);
+        salesData = Object.values(salesByLocation);
+    })
 
     const data = {
         labels: labels,
