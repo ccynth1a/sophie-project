@@ -19,7 +19,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig, 'soapie-project');
+const app = initializeApp(firebaseConfig, 'sophie-project');
 export const db = getFirestore(app)
 //export const db = initializeFirestore(app, {
 //  experimentalForceLongPolling: true

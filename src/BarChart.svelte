@@ -4,7 +4,7 @@
     import type { Sale } from "$lib/types";
     import { onDestroy } from "svelte";
 
-    // Age groups with defined bounds for the bar chart
+    // age groups with defined bounds for the bar chart
     const ageGroups = [
         { name: 'Under 18', min: 0, max: 17 },
         { name: '18-25', min: 18, max: 25 },
@@ -74,7 +74,7 @@
                     color: '#E9E9E9'
                 },
                 grid: {
-                    color: '#BBBBBB'
+                    color: '#BBBBBB' 
                 }
             },
         }

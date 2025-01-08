@@ -1,6 +1,4 @@
 <script lang="ts">
-    import salesJSON from "$lib/sales.json"
-    import { color } from "chart.js/helpers";
     import Chart from "./Chart.svelte";
     import { databaseQueryData } from "$lib/globals";
     import { onDestroy } from "svelte";

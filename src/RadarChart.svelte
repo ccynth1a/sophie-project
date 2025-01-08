@@ -1,6 +1,5 @@
 <script lang="ts">
     import { databaseQueryData } from "$lib/globals";
-    import salesJSON from "$lib/sales.json"
     import Chart from "./Chart.svelte";
 
     import type { Sale } from "$lib/types";

@@ -1,5 +1,4 @@
 <script lang="ts">
-    import salesJSON from "$lib/sales.json"
     import type { Sale } from "$lib/types";
     import { databaseQueryData } from "$lib/globals";
 

@@ -1,6 +1,6 @@
 <script lang="ts">
     import { databaseQueryData } from "$lib/globals";
-    import salesJSON from "$lib/sales.json"
+    import { onDestroy } from "svelte";
     import Chart from "./Chart.svelte";
 
     let dailySales = {}
@@ -12,6 +12,7 @@
             return accumulator
         }, {})  
     })
+
     const data = {
         labels: Object.keys(dailySales).sort((a,b) => new Date(a).getTime() - new Date(b).getTime()),
         datasets: [
@@ -69,5 +70,6 @@
             }
         }
     }
+    onDestroy(() => unsubscribe())
 </script>
 <Chart type="line" {data} {options} />

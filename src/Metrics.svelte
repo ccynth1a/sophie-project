@@ -1,6 +1,5 @@
 <script lang="ts">
     // Simple Metrics Calculation for Header Bar
-    import salesJSON from "$lib/sales.json"
 
     import { databaseQueryData } from "$lib/globals";
 
