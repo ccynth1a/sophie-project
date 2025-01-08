@@ -44,6 +44,7 @@
     <div class=" grid grid-cols-3 justify-center text-center items-center " >
         <!-- <Clock /> -->
     </div>
+    {#if $dbLoaded}
     <!-- header thnang -->
     <div class=" text-white ">
         <div class=" text-4xl font-semibold " > Dashboard </div>
@@ -54,7 +55,6 @@
     <!-- Totals -->
     <Metrics />
     <!-- Charts :) -->
-    {#if $dbLoaded}
     <div class=" mt-4 gap-4 grid grid-cols-4 ">
         <!-- Revenue by location -->
         <div class=" card ">
@@ -77,7 +77,12 @@
             <CustomersChart />
         </div>
     </div>
+    {:else}
+    <div class=" text-white ">
+        Loading
+    </div>
     {/if}
+
 </div>
 
 <style>
