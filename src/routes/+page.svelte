@@ -24,6 +24,7 @@
        databaseQueryData.set(sales.docs.map(doc => doc.data()) as Sale[]) // set global database store to the data fetched
 
        databaseQueryData.subscribe(data => {
+        console.log(data)
         if (data.length > 0) {
             const dates: Date[] = data.map(sale => new Date(sale.purchase_date.seconds * 1000));
             start = new Date(Math.min(...dates.map(date => date.getTime()))).toISOString().split('T')[0];
@@ -55,28 +56,28 @@
     <Metrics />
     <!-- Charts :) -->
     {#if $dbLoaded}
-    <div class=" mt-4 gap-4 grid grid-cols-4 ">
-        <!-- Revenue by location -->
-        <div class=" card ">
-            <RadarChart />
+        <div class=" mt-4 gap-4 grid grid-cols-4 ">
+            <!-- Revenue by location -->
+            <div class=" card ">
+                <RadarChart />
+            </div>
+            <!-- Sales by age group -->
+            <div class=" card col-span-2">
+                <BarChart />
+            </div>
+            <!-- Spending by gender -->
+            <div class=" card ">
+                <PieChart />
+            </div>
+            <!-- Daily Sales -->
+            <div class=" card col-span-2">
+                <SalesChart />
+            </div>
+            <!-- Daily Customers -->
+            <div class=" card col-span-2">
+                <CustomersChart />
+            </div>
         </div>
-        <!-- Sales by age group -->
-        <div class=" card col-span-2">
-            <BarChart />
-        </div>
-        <!-- Spending by gender -->
-        <div class=" card ">
-            <PieChart />
-        </div>
-        <!-- Daily Sales -->
-        <div class=" card col-span-2">
-            <SalesChart />
-        </div>
-        <!-- Daily Customers -->
-        <div class=" card col-span-2">
-            <CustomersChart />
-        </div>
-    </div>
     {/if}
 </div>
 
