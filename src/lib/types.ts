@@ -1,10 +1,13 @@
+import type { Timestamp } from "firebase/firestore";
+
 export type Sale = {
-    customer_id: number;
-    gender: String;
+    gender: string;
     age: number;
     total_spent: number;
     items_bought: number;
-    purchase_date: String;
-    location: String;
-    payment_method: String
+    purchase_date: Timestamp;
+    location: string;
+    payment_method: string
 }
+
+export type 
