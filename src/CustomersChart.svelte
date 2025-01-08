@@ -1,13 +1,22 @@
 <script lang="ts">
     import salesJSON from "$lib/sales.json"
     import type { Sale } from "$lib/types";
+    import { databaseQueryData } from "$lib/globals";
+
     import Chart from "./Chart.svelte";
+    import { onDestroy } from "svelte";
+
+    let dailyCustomers = {}; // initialised as empty to prevent undefined
 
     // Get the number of customers per each unique day
-    const dailyCustomers = salesJSON.sales.reduce((prevSale: any, sale) => {
-        prevSale[sale.purchase_date] = (prevSale[sale.purchase_date] || 0) + 1;
-        return prevSale;
-    }, {})
+    const unsubscribe = databaseQueryData.subscribe(data => {
+        if (data.length > 0)  {
+            dailyCustomers = data.reduce((prevSale: any, sale) => {
+                prevSale[sale.purchase_date.toDate().toISOString().split('T')[0]]  = (prevSale[sale.purchase_date.toDate().toISOString().split('T')[0]] || 0) + 1;
+                return prevSale
+            }, {})
+        }
+    })
                                                                                                  
     const data = {
         labels: Object.keys(dailyCustomers).sort((a,b) => new Date(a).getTime() - new Date(b).getTime()),
@@ -67,5 +76,7 @@
             }
         }
     }
+
+    onDestroy(() => unsubscribe())
 </script>
 <Chart type="line" {data} {options} />
