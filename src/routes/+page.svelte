@@ -24,6 +24,7 @@
        databaseQueryData.set(sales.docs.map(doc => doc.data()) as Sale[]) // set global database store to the data fetched
 
        databaseQueryData.subscribe(data => {
+        console.log(data)
         if (data.length > 0) {
             const dates: Date[] = data.map(sale => new Date(sale.purchase_date.seconds * 1000));
             start = new Date(Math.min(...dates.map(date => date.getTime()))).toISOString().split('T')[0];
