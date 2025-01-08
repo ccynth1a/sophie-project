@@ -2,6 +2,7 @@
     // Simple Metrics Calculation for Header Bar
 
     import { databaseQueryData } from "$lib/globals";
+    import { onDestroy } from "svelte";
 
     // all variables are declared but not properly intialised to prevent typescript errors. since this component isnt mounted until the database is loaded, it will never use this data
     let averageAge = 0;
@@ -37,6 +38,8 @@
             stringified = stringified.replace(pattern, "$1,$2");
         return stringified;
     }
+
+    onDestroy(() => unsubscribe())
 </script>
 
 <!--PHOEBE GO WILD HERE-->
