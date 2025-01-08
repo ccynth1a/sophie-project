@@ -9,5 +9,3 @@ export type Sale = {
     location: string;
     payment_method: string
 }
-
-export type 
