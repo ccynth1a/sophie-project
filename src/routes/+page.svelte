@@ -6,7 +6,6 @@
     import PieChart from '../PieChart.svelte';
     import RadarChart from '../RadarChart.svelte';
     import SalesChart from '../SalesChart.svelte';
-    import Loading from '../Loading.svelte';
 
     import { collection, getDocs } from 'firebase/firestore';
 
@@ -80,8 +79,6 @@
             <CustomersChart />
         </div>
     </div>
-    {:else}
-        <Loading />
     {/if}
 
 </div>
