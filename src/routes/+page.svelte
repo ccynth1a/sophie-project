@@ -6,6 +6,7 @@
     import PieChart from '../PieChart.svelte';
     import RadarChart from '../RadarChart.svelte';
     import SalesChart from '../SalesChart.svelte';
+    import Loading from '../Loading.svelte';
 
     import { collection, getDocs } from 'firebase/firestore';
 
@@ -46,6 +47,7 @@
         <!-- <Clock /> -->
     </div>
     {#if $dbLoaded}
+    <!-- {#if start == "itsnotthis"} -->
     <!-- header thnang -->
     <div class=" text-white ">
         <div class=" text-4xl font-semibold " > Dashboard </div>
@@ -79,9 +81,7 @@
         </div>
     </div>
     {:else}
-    <div class=" text-white ">
-        Loading
-    </div>
+        <Loading />
     {/if}
 
 </div>
