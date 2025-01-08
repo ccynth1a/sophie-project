@@ -1,13 +1,17 @@
 <script lang="ts">
+    import { databaseQueryData } from "$lib/globals";
     import salesJSON from "$lib/sales.json"
     import Chart from "./Chart.svelte";
 
+    let dailySales = {}
+    
     // Calculate the total sales for each unique day
-    const dailySales: number = salesJSON.sales.reduce((accumulator: any, sale) => {
-        accumulator[sale.purchase_date] = (accumulator[sale.purchase_date] || 0) + sale.total_spent;
-        return accumulator
-    }, {})
-                                                                                                 
+    const unsubscribe = databaseQueryData.subscribe(data => {
+        dailySales = data.reduce((accumulator: any, sale) => {
+            accumulator[sale.purchase_date.toDate().toISOString().split('T')[0]] = (accumulator[sale.purchase_date.toDate().toISOString().split('T')[0]] || 0) + sale.total_spent;
+            return accumulator
+        }, {})  
+    })
     const data = {
         labels: Object.keys(dailySales).sort((a,b) => new Date(a).getTime() - new Date(b).getTime()),
         datasets: [

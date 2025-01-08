@@ -4,6 +4,7 @@
     import Chart from "./Chart.svelte";
 
     import type { Sale } from "$lib/types";
+    import { onDestroy } from "svelte";
 
     let salesByLocation: number[] = [];
     let labels: string[] = []
@@ -74,6 +75,8 @@
             }
         }
     }
+
+    onDestroy(() => unsubscribe())
 </script>
 
 <Chart type="radar" {data} {options} />
