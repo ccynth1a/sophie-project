@@ -6,15 +6,34 @@
     import PieChart from '../PieChart.svelte';
     import RadarChart from '../RadarChart.svelte';
     import SalesChart from '../SalesChart.svelte';
+    import Loading from '../Loading.svelte';
 
-    import salesJSON from "$lib/sales.json"
+    import { collection, getDocs } from 'firebase/firestore';
+
     import type { Sale } from '$lib/types';
 
-    const dates: Date[] = salesJSON.sales.map(sale => new Date(sale.purchase_date)); // get all unique dates
+    import { db } from '$lib/firebase';
+    import { onMount } from 'svelte';
 
-    const start = new Date(Math.min(...dates.map(date => date.getTime()))).toISOString().split('T')[0]; // calculate start date
-    const end = new Date(Math.max(...dates.map(date => date.getTime()))).toISOString().split('T')[0]; // calculate end date
+    import { databaseQueryData, dbLoaded } from '$lib/globals';
 
+    let start: string;
+    let end: string;
+
+    onMount(async () => {
+       const sales = await getDocs(collection(db,'sale')); // fetch data from the database.
+       databaseQueryData.set(sales.docs.map(doc => doc.data()) as Sale[]) // set global database store to the data fetched
+
+       databaseQueryData.subscribe(data => {
+        console.log(data)
+        if (data.length > 0) {
+            const dates: Date[] = data.map(sale => new Date(sale.purchase_date.seconds * 1000));
+            start = new Date(Math.min(...dates.map(date => date.getTime()))).toISOString().split('T')[0];
+            end = new Date(Math.max(...dates.map(date => date.getTime()))).toISOString().split('T')[0];
+        }
+       })
+       dbLoaded.set(true)
+    })
 
 </script>
 
@@ -27,6 +46,8 @@
     <div class=" grid grid-cols-3 justify-center text-center items-center " >
         <!-- <Clock /> -->
     </div>
+    {#if $dbLoaded}
+    <!-- {#if start == "itsnotthis"} -->
     <!-- header thnang -->
     <div class=" text-white ">
         <div class=" text-4xl font-semibold " > Dashboard </div>
@@ -59,6 +80,10 @@
             <CustomersChart />
         </div>
     </div>
+    {:else}
+        <Loading />
+    {/if}
+
 </div>
 
 <style>

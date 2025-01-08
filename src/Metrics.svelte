@@ -2,23 +2,34 @@
     // Simple Metrics Calculation for Header Bar
     import salesJSON from "$lib/sales.json"
 
-    // All functions below are self explanatory and do what they say. Each creates a variable to be rendered in the HTML below
-    const averageAge: number = salesJSON.sales.reduce((acc, curr) => {
-        return acc + curr.age;
-    }, 0) / salesJSON.sales.length;
+    import { databaseQueryData } from "$lib/globals";
 
-    const averageSpending: number = salesJSON.sales.reduce((acc, curr) => {
-        return acc + curr.total_spent;
-    }, 0) / salesJSON.sales.length;
+    // all variables are declared but not properly intialised to prevent typescript errors. since this component isnt mounted until the database is loaded, it will never use this data
+    let averageAge = 0;
+    let averageSpending = 0;
+    let dailyRevenue: Record<string, number> = {};
+    let totalDays = 0;
+    let totalRevenue = 0;
+    let averageDailyRevenue = 0;
 
-    const dailyRevenue: Record<string, number> = salesJSON.sales.reduce((acc: Record<string, number>, sale) => {
-        acc[sale.purchase_date] = (acc[sale.purchase_date] || 0) + sale.total_spent;
-        return acc
-    }, {})
+    const unsubscribe = databaseQueryData.subscribe(data => {
+        averageAge = data.reduce((acc, curr) => {
+            return acc + curr.age
+        }, 0) / data.length;
 
-    const totalDays: number = Object.keys(dailyRevenue).length // get number of unique dates
-    const totalRevenue: number = Object.values(dailyRevenue).reduce((acc: number, rev: number) => acc + rev, 0);
-    const averageDailyRevenue: number = totalDays > 0 ? totalRevenue / totalDays : 0; // <- ternary to prevent divide by 0
+        averageSpending = data.reduce((acc, curr) => {
+            return acc + curr.total_spent
+        }, 0) / data.length
+
+        dailyRevenue = data.reduce((acc: Record<string, number>, sale) => {
+            acc[sale.purchase_date.seconds] = (acc[sale.purchase_date.seconds] || 0) + sale.total_spent;
+            return acc;
+        }, {})
+    })
+
+    totalDays = Object.keys(dailyRevenue).length // get number of unique dates
+    totalRevenue = Object.values(dailyRevenue).reduce((acc: number, rev: number) => acc + rev, 0);
+    averageDailyRevenue = totalDays > 0 ? totalRevenue / totalDays : 0; // <- ternary to prevent divide by 0
 
     const insertCommas = (x: number) => {
         let stringified = x.toString();

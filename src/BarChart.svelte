@@ -1,7 +1,8 @@
 <script lang="ts">
-    import salesJSON from "$lib/sales.json"
+    import { databaseQueryData } from "$lib/globals";
     import Chart from "./Chart.svelte";
     import type { Sale } from "$lib/types";
+    import { onDestroy } from "svelte";
 
     // Age groups with defined bounds for the bar chart
     const ageGroups = [
@@ -12,9 +13,15 @@
         { name: '60+', min: 61, max: Infinity },
     ];
 
-    const ageSales: number[] = ageGroups.map(group => {
-        return salesJSON.sales.filter((sale: Sale) => sale.age >= group.min && sale.age <= group.max).length;
-    })
+    let ageSales = Array(ageGroups.length).fill(0); // 0 initialise the data to make sure the page loads correctly
+
+    const unsubscribe = databaseQueryData.subscribe(data => { // svelte stores handle lifecycle independently to the rest of the component. despite no path to this function, its called on initialisation anyways
+        if (data.length > 0) { // check for non empty database query
+            ageSales = ageGroups.map(group => {
+                return data.filter((sale: Sale) => sale.age >= group.min && sale.age <= group.max).length;
+            })
+        }
+    });
 
     const data = {
         labels: ageGroups.map(group => group.name), // get labels
@@ -72,6 +79,8 @@
             },
         }
     }
+
+    onDestroy(() => unsubscribe()) // trigger refresh
 </script>
   
 <Chart type="bar" {data} {options} />

@@ -2,13 +2,21 @@
     import salesJSON from "$lib/sales.json"
     import { color } from "chart.js/helpers";
     import Chart from "./Chart.svelte";
+    import { databaseQueryData } from "$lib/globals";
+    import { onDestroy } from "svelte";
 
+    let genderSales: number[] = [];
     // Calculate the sales for each unique gender
-    const genderSales: number[] = salesJSON.sales.reduce((accumulator: any, sale) => {
-        accumulator[sale.gender] = (accumulator[sale.gender] || 0) + sale.total_spent;
-        return accumulator;
-    }, {});
-                                                                                                                                
+                    
+    const unsubscribe = databaseQueryData.subscribe(data => { // svelte stores handle lifecycle independently to the rest of the component. despite no path to this function, its called on initialisation anyways
+        if (data.length > 0) { // check for non empty database query
+            genderSales = data.reduce((accumulator: any, sale) => {
+                accumulator[sale.gender] = (accumulator[sale.gender] || 0) + sale.total_spent;
+                return accumulator;
+            }, {})
+        }
+    });
+
     const data = {
         labels: Object.keys(genderSales),
         datasets: [
@@ -39,6 +47,8 @@
             },
         }
     };
+
+    onDestroy(() => unsubscribe()) // trigger refresh
 
 </script>
 
