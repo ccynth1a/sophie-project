@@ -15,14 +15,22 @@
     import { onMount } from 'svelte';
 
     import { databaseQueryData, dbLoaded } from '$lib/globals';
+    import Loading from '../Loading.svelte';
 
     let start: string;
     let end: string;
 
+    const unsubscribe = () => {
+       databaseQueryData.subscribe(data => {
+        console.log(data)                                                                                 
+        if (data.length > 0) {
+            const dates: Date[] = data.map(sale => new Date(sale.purchase_date.seconds * 1000));
+            start = new Date(Math.min(...dates.map(date => date.getTime()))).toISOString().split('T')[0];
+            end = new Date(Math.max(...dates.map(date => date.getTime()))).toISOString().split('T')[0];
+        }
+       })
+    }
     onMount(async () => {
-       const sales = await getDocs(collection(db,'sale')); // fetch data from the database.
-       databaseQueryData.set(sales.docs.map(doc => doc.data()) as Sale[]) // set global database store to the data fetched
-
        databaseQueryData.subscribe(data => {
         console.log(data)
         if (data.length > 0) {
@@ -31,8 +39,9 @@
             end = new Date(Math.max(...dates.map(date => date.getTime()))).toISOString().split('T')[0];
         }
        })
-       dbLoaded.set(true)
     })
+
+    onMount(() => unsubscribe())
 
 </script>
 
@@ -79,6 +88,8 @@
             <CustomersChart />
         </div>
     </div>
+    {:else}
+        <Loading />
     {/if}
 
 </div>
