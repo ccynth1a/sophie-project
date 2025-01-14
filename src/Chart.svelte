@@ -5,8 +5,8 @@
 
     let { type, data, options } = $props()
 
-    let chartCanvas: any;
-    let chartInstance: any;
+    let chartCanvas: HTMLCanvasElement;
+    let chartInstance: Chart;
 
     onMount(() => {
         if (chartCanvas) {
